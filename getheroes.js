@@ -1,13 +1,26 @@
 const puppeteer = require("puppeteer");
 
 async function getQuote() {
-    const browser = await puppeteer.launch({
-        executablePath: "C:\Program Files\Chromium\Application\chrome.exe",
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-        ],
-      });
+  const PCR = require("puppeteer-chromium-resolver");
+  const option = {
+      revision: "",
+      detectionPath: "",
+      folderName: ".chromium-browser-snapshots",
+      defaultHosts: ["https://storage.googleapis.com", "https://npm.taobao.org/mirrors"],
+      hosts: [],
+      cacheRevisions: 2,
+      retry: 3,
+      silent: false
+  };
+  const stats = await PCR(option);
+  const browser = await stats.puppeteer.launch({
+      headless: false,
+      args: ["--no-sandbox"],
+      executablePath: stats.executablePath
+  }).catch(function(error) {
+      console.log(error);
+  });
+  
     const page = await browser.newPage();
 
     await page.goto("https://dota2.fandom.com/wiki/Heroes_by_release");
