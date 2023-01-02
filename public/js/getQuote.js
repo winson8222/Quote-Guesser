@@ -17,7 +17,7 @@ async function getQuote() {
             choices[i] = heroes.randomHeroes(hList);
         }
         var correct = heroes.getCorrect(choices);
-        correct.hero = 'Juggernaut';
+        correct.hero = 'Centaur_Warrunner';
         console.log(correct.hero);
 
 
