@@ -1,7 +1,12 @@
 const puppeteer = require("puppeteer");
 
 async function getQuote() {
-    const browser = await puppeteer.launch({})
+    const browser = await puppeteer.launch({
+        'args' : [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+          ]
+    });
     const page = await browser.newPage();
 
     await page.goto("https://dota2.fandom.com/wiki/Heroes_by_release");
