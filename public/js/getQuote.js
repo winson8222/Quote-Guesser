@@ -17,6 +17,7 @@ async function getQuote() {
             choices[i] = heroes.randomHeroes(hList);
         }
         var correct = heroes.getCorrect(choices);
+        correct.hero = "Pangolier";
         console.log(correct.hero);
 
 
