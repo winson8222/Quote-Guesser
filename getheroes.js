@@ -2,9 +2,12 @@ const puppeteer = require("puppeteer");
 
 async function getQuote() {
     const browser = await puppeteer.launch({
-        headless: false,
-        args: ['--no-sandbox','--disable-setuid-sandbox']
-    });
+        executablePath: "C:\Program Files\Chromium\Application\chrome.exe",
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+        ],
+      });
     const page = await browser.newPage();
 
     await page.goto("https://dota2.fandom.com/wiki/Heroes_by_release");
