@@ -65,6 +65,38 @@ exports.herolist5 = [
 exports.herolist10 = [
     'Pangolier',
 ]
+
+exports.herolistv1 = [
+    'Crystal_Maiden',     'Dazzle',              'Lich',
+  'Lina',               'Lion',                'Mirana',
+  'Morphling',          'Necrophos',           'Puck',
+  'Razor',              'Sand_King',           'Shadow_Shaman',
+  'Storm_Spirit',       'Sven',                'Tidehunter',
+  'Vengeful_Spirit',    'Witch_Doctor',        'Slardar',
+  'Faceless_Void',      'Viper',               'Venomancer',
+  'Clockwerk',          'Nature%27s_Prophet',  'Dark_Seer',
+  'Pugna',              'Beastmaster',         'Enchantress',
+  'Leshrac',            'Tinker',              'Weaver',
+  'Night_Stalker',      'Ancient_Apparition',  'Doom',
+  'Chen',               'Juggernaut',          'Bloodseeker',
+  'Kunkka',             'Riki',                'Broodmother',
+  'Huskar',             'Jakiro',              'Batrider',
+  'Omniknight',         'Alchemist',           'Lifestealer',
+  'Death_Prophet',      'Ursa',                'Bounty_Hunter',
+  'Silencer',           'Spirit_Breaker',      'Clinkz',
+  'Outworld_Destroyer', 'Bane',                'Shadow_Demon',
+  'Lycan',              'Lone_Druid',          'Brewmaster',
+  'Phantom_Lancer',     'Treant_Protector',    'Gyrocopter',
+  'Chaos_Knight',       'Luna',                'Undying',
+  'Disruptor',          'Templar Assassin',    'Naga_Siren',
+  'Nyx_Assassin',       'Keeper_of_the_Light', 'Visage',
+  'Magnus',             'Centaur_Warrunner',   'Slark',
+  'Timbersaw',          'Medusa',              'Troll Warlord',
+  'Tusk',               'Bristleback',         'Skywrath_Mage',
+  'Elder_Titan',        'Ember_Spirit',        'Earth_Spirit',
+  'Oracle',             'Winter_Wyvern',       'Arc_Warden',
+  'Underlord',
+]
 exports.randomHeroes = function(lst){
     var n = Math.floor(Math.random() * lst.length + 0)
     var hero = lst[n];

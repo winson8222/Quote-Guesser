@@ -11,7 +11,7 @@ async function getQuote() {
         })
         const page = await browser.newPage();
         let n = Math.floor(Math.random() * 3 + 3);
-        let hList = heroes.herolist;
+        let hList = heroes.herolistv1;
         let choices = [];
         for(let i = 0; i < 4; i++){
             choices[i] = heroes.randomHeroes(hList);
@@ -23,29 +23,29 @@ async function getQuote() {
 
 
         await page.goto("https://dota2.fandom.com/wiki/" + correct.hero +"/Responses");
-        if(heroes.herolist7.includes(correct.hero)){
-            console.log("7 " + n)
-            var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(7) > li:nth-child(" + n + ")");
-        } else if (heroes.herolist8.includes(correct.hero)) {
-            console.log("8 " + n)
-            var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(8) > li:nth-child(" + n + ")");
-        } else if (correct.hero === 'Abaddon') {
-            console.log("5 " + n)
-            var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(5) > li:nth-child(" + n + ")");
-        } else if (correct.hero === 'Dark_Willow' || correct.hero === 'Monkey_King' || correct.hero === 'Pangolier') {
-            console.log("9 " + n)
-            var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(9) > li:nth-child(" + n + ")");
-        } else if (correct.hero === 'cwdw') {
-            console.log("10 " + n)
-            var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(10) > li:nth-child(" + n + ")");
-        } else if (correct.hero === 'Juggernaut') {
-            console.log("8 " + n)
-            var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(8) > li:nth-child(10)");
-        } else {
-            console.log("6 " + n)
-            var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(6) > li:nth-child(" + n + ")");
-        }
-        
+        // if(heroes.herolist7.includes(correct.hero)){
+        //     console.log("7 " + n)
+        //     var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(7) > li:nth-child(" + n + ")");
+        // } else if (heroes.herolist8.includes(correct.hero)) {
+        //     console.log("8 " + n)
+        //     var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(8) > li:nth-child(" + n + ")");
+        // } else if (correct.hero === 'Abaddon') {
+        //     console.log("5 " + n)
+        //     var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(5) > li:nth-child(" + n + ")");
+        // } else if (correct.hero === 'Dark_Willow' || correct.hero === 'Monkey_King' || correct.hero === 'Pangolier') {
+        //     console.log("9 " + n)
+        //     var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(9) > li:nth-child(" + n + ")");
+        // } else if (correct.hero === 'cwdw') {
+        //     console.log("10 " + n)
+        //     var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(10) > li:nth-child(" + n + ")");
+        // } else if (correct.hero === 'Juggernaut') {
+        //     console.log("8 " + n)
+        //     var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(8) > li:nth-child(10)");
+        // } else {
+        //     console.log("6 " + n)
+        //     var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(6) > li:nth-child(" + n + ")");
+        // }
+        var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(6) > li:nth-child(" + n + ")");
         //another loop to convert the name
 
         var text = await page.evaluate(element => element.innerText, element); 
