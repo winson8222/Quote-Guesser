@@ -32,10 +32,10 @@ async function getQuote() {
         } else if (correct.hero === 'Abaddon') {
             console.log("5 " + n)
             var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(5) > li:nth-child(" + n + ")");
-        } else if (correct.hero === 'Dark_Willow' || correct.hero === 'Monkey_King') {
+        } else if (correct.hero === 'Dark_Willow' || correct.hero === 'Monkey_King' || correct.hero === 'Pangolier') {
             console.log("9 " + n)
             var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(9) > li:nth-child(" + n + ")");
-        } else if (correct.hero === 'Pangolier') {
+        } else if (correct.hero === 'cwdw') {
             console.log("10 " + n)
             var element = await page.waitForSelector("#mw-content-text > div > ul:nth-child(10) > li:nth-child(" + n + ")");
         } else if (correct.hero === 'Juggernaut') {
